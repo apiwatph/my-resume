@@ -1,96 +1,371 @@
+/* =========================
+   RESET
+========================= */
+
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
+
+/* =========================
+   BODY
+========================= */
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #eef2f7;
-    color: #333;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    background: linear-gradient(135deg, #eef2ff, #f8fafc);
+    color: #334155;
+    line-height: 1.7;
+    min-height: 100vh;
 }
 
+
+/* =========================
+   RESUME CONTAINER
+========================= */
+
 .resume {
-    width: 850px;
-    max-width: 95%;
-    margin: 40px auto;
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 900px;
+    max-width: 94%;
+    margin: 50px auto;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 45px 55px;
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.12);
+
+    position: relative;
+    overflow: hidden;
 }
+
+
+/* เส้นตกแต่งด้านบน */
+
+.resume::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 7px;
+
+    background: linear-gradient(
+        90deg,
+        #4f46e5,
+        #7c3aed,
+        #06b6d4
+    );
+}
+
+
+/* =========================
+   HEADER
+========================= */
 
 header {
     display: flex;
     align-items: center;
-    gap: 30px;
-    padding-bottom: 30px;
-    border-bottom: 2px solid #eee;
+    gap: 35px;
+
+    padding-bottom: 35px;
+    border-bottom: 1px solid #e2e8f0;
 }
+
+
+/* รูป Profile */
 
 header img {
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
+
     object-fit: cover;
+
     border-radius: 50%;
-    border: 5px solid #4f46e5;
+
+    border: 6px solid #ffffff;
+
+    outline: 4px solid #4f46e5;
+
+    box-shadow:
+        0 10px 25px rgba(79, 70, 229, 0.25);
 }
+
+
+/* ชื่อ */
 
 h1 {
+    font-size: 42px;
+    font-weight: 700;
+
     margin-bottom: 5px;
-    color: #4f46e5;
+
+    background: linear-gradient(
+        90deg,
+        #4f46e5,
+        #7c3aed
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
+
+/* ตำแหน่ง */
 
 h2 {
-    font-size: 20px;
-    color: #555;
+    font-size: 21px;
+    font-weight: 600;
+
+    color: #475569;
+
+    margin-bottom: 8px;
 }
+
+
+/* คำอธิบายใต้ชื่อ */
+
+header p {
+    color: #64748b;
+    font-size: 16px;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+section {
+    margin-top: 32px;
+}
+
+
+/* หัวข้อแต่ละ Section */
 
 h3 {
-    margin-top: 30px;
+    display: flex;
+    align-items: center;
+
+    font-size: 22px;
     color: #4f46e5;
+
+    margin-bottom: 18px;
+
+    padding-left: 14px;
+
     border-left: 5px solid #4f46e5;
-    padding-left: 10px;
 }
 
-h4 {
+
+/* =========================
+   TEXT
+========================= */
+
+section p {
+    color: #475569;
+    font-size: 16px;
+}
+
+
+/* =========================
+   EXPERIENCE / EDUCATION
+========================= */
+
+.item {
+    background: #f8fafc;
+
+    padding: 20px 22px;
+
+    margin-bottom: 15px;
+
+    border-radius: 14px;
+
+    border: 1px solid #e2e8f0;
+
+    transition: all 0.25s ease;
+}
+
+
+/* เวลาเอาเมาส์ชี้ */
+
+.item:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(15, 23, 42, 0.08);
+
+    border-color: #c7d2fe;
+}
+
+
+.item h4 {
+    font-size: 18px;
+
+    color: #1e293b;
+
     margin-bottom: 5px;
 }
 
-.item {
-    margin-bottom: 20px;
+
+/* =========================
+   LIST
+========================= */
+
+ul {
+    margin-top: 10px;
+    padding-left: 22px;
 }
+
+
+li {
+    margin-bottom: 6px;
+    color: #475569;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
 
 .skills {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
 }
+
 
 .skills span {
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    border-radius: 30px;
+
     background: #eef2ff;
+
     color: #4f46e5;
-    padding: 8px 15px;
-    border-radius: 20px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    border: 1px solid #c7d2fe;
+
+    transition: all 0.25s ease;
 }
 
-li {
-    margin-bottom: 7px;
+
+/* Hover Skill */
+
+.skills span:hover {
+    background: #4f46e5;
+    color: white;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 15px rgba(79, 70, 229, 0.25);
 }
 
-@media (max-width: 600px) {
+
+/* =========================
+   CONTACT
+========================= */
+
+section:last-child {
+    padding-top: 10px;
+    border-top: 1px solid #e2e8f0;
+}
+
+
+section:last-child p {
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
 
     .resume {
-        padding: 20px;
-        margin: 15px auto;
+        width: 95%;
+        padding: 30px 22px;
+        margin: 25px auto;
     }
+
 
     header {
         flex-direction: column;
         text-align: center;
+        gap: 20px;
     }
 
+
     header img {
-        width: 120px;
-        height: 120px;
+        width: 130px;
+        height: 130px;
+    }
+
+
+    h1 {
+        font-size: 32px;
+    }
+
+
+    h2 {
+        font-size: 18px;
+    }
+
+
+    header p {
+        font-size: 14px;
+    }
+
+
+    h3 {
+        font-size: 20px;
+    }
+
+
+    section p {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 450px) {
+
+    .resume {
+        padding: 25px 18px;
+    }
+
+
+    h1 {
+        font-size: 27px;
+    }
+
+
+    header img {
+        width: 110px;
+        height: 110px;
+    }
+
+
+    .skills {
+        gap: 8px;
+    }
+
+
+    .skills span {
+        font-size: 13px;
+        padding: 7px 12px;
     }
 }
